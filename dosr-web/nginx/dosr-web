@@ -1,0 +1,9 @@
+server {
+	listen 80;
+	server_name dosr.carrio.me;
+
+	location / {
+		include proxy_params;
+		proxy_pass http://unix:/opt/dosr-web/dosr.sock;
+	}
+}

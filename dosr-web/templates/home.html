@@ -1,0 +1,98 @@
+<!DOCTYPE HTML>
+<html>
+	<head>
+		<title>DOSR</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
+		<link rel="stylesheet" href="/static/assets/css/main.css" />
+	</head>
+	<body>
+
+		<!-- Sidebar -->
+			<section id="sidebar">
+				<div class="inner">
+					<nav>
+						<ul>
+							{% for link in links %}
+							<li><a href="{{link['url']}}">{{link['title']}}</a></li>
+							{% endfor %}
+						</ul>
+					</nav>
+				</div>
+			</section>
+
+		<!-- Wrapper -->
+			<div id="wrapper">
+
+				<!-- Intro -->
+					<section id="intro" class="wrapper style1 fullscreen fade-up">
+						<div class="inner">
+							<h1>{{welcome['title']}}</h1>
+							<p>{{welcome['subtitle']}}</p>
+							<ul class="actions">
+								<li><a href="{{welcome['link']}}" class="button scrolly">Learn more</a></li>
+							</ul>
+						</div>
+					</section>
+
+				<!-- project -->
+					<section id="project" class="wrapper style3 fade-up">
+						<div class="inner">
+							<h2>{{spec['title']}}</h2>
+							<p id="spec-desc">{{spec['description']}}</p>
+							<div class="features">
+                                {% for feature in features %}
+								<section>
+									<span class="icon major {{feature['icon']}}"></span>
+									<h3>{{feature['title']}}</h3>
+									<p>{{feature['description']}}</p>
+								</section>
+                                {% endfor %}
+							</div>
+							<ul class="actions">
+								<li><a href="{{spec['link1']}}" class="button">{{spec['link1_title']}}</a></li>
+								<li><a href="{{spec['link2']}}" class="button">{{spec['link2_title']}}</a></li>
+								<li><a href="{{spec['link3']}}" class="button">{{spec['link3_title']}}</a></li>
+							</ul>
+						</div>
+					</section>
+
+				<!-- sysadmins -->
+					<section id="sysadmins" class="wrapper style2 spotlights">
+						{% for admin in admins %}
+                        <section>
+							<a href="{{admin['url']}}" class="image"><img src="{{admin['image']}}'" alt="" data-position="center center" /></a>
+							<div class="content">
+								<div class="inner">
+									<h2>{{admin['name']}}</h2>
+									<p>{{admin['description']}}</p>
+									<ul class="actions">
+										<li><a href="{{admin['url']}}" class="button">Learn more</a></li>
+									</ul>
+								</div>
+							</div>
+						</section>
+                        {% endfor %}
+					</section>
+
+			</div>
+
+		<!-- Footer -->
+			<footer id="footer" class="wrapper style1-alt">
+				<div class="inner">
+					<ul class="menu">
+						<li>&copy; DOSR. No rights reserved. We have none. This copyright is a joke.</li>
+					</ul>
+				</div>
+			</footer>
+
+		<!-- Scripts -->
+			<script src="/static/assets/js/jquery.min.js"></script>
+			<script src="/static/assets/js/jquery.scrollex.min.js"></script>
+			<script src="/static/assets/js/jquery.scrolly.min.js"></script>
+			<script src="/static/assets/js/skel.min.js"></script>
+			<script src="/static/assets/js/util.js"></script>
+			<script src="/static/assets/js/main.js"></script>
+
+	</body>
+</html>

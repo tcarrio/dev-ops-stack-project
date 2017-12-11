@@ -1,0 +1,13 @@
+[Unit]
+Description=Gunicorn instance to serve dosr-web
+After=network.target
+
+[Service]
+User=tlcarrio
+Group=www-data
+WorkingDirectory=/opt/dosr-web
+Environment="PATH=/opt/dosr-web/venv/bin"
+ExecStart=/opt/dosr-web/venv/bin/gunicorn --workers 3 --bind unix:dosr.sock -m 007 wsgi:app
+
+[Install]
+WantedBy=multi-user.target

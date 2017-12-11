@@ -1,0 +1,38 @@
+DROP TABLE IF EXISTS Specifications;
+DROP TABLE IF EXISTS Features;
+DROP TABLE IF EXISTS SysAdmins;
+DROP TABLE IF EXISTS Links;
+DROP TABLE IF EXISTS Welcome;
+
+CREATE TABLE Specifications(
+    title VARCHAR(50) NOT NULL,
+    description VARCHAR(1000) NOT NULL,
+    link1 VARCHAR(200) NOT NULL,
+    link1_title VARCHAR(50) NOT NULL,
+    link2 VARCHAR(200) NOT NULL,
+    link2_title VARCHAR(50) NOT NULL,
+    link3 VARCHAR(200) NOT NULL,
+    link3_title VARCHAR(50) NOT NULL);
+
+CREATE TABLE Features(
+    ID SERIAL PRIMARY KEY,
+    title VARCHAR(50) NOT NULL,
+    description VARCHAR(1000) NOT NULL,
+    icon VARCHAR(100) NOT NULL);
+
+CREATE TABLE SysAdmins(
+    ID SERIAL PRIMARY KEY,
+    name VARCHAR(50) NOT NULL,
+    description VARCHAR(1000) NOT NULL,
+    image VARCHAR(100) NOT NULL,
+    url VARCHAR(200) NOT NULL);
+
+CREATE TABLE Links(
+    ID SERIAL PRIMARY KEY,
+    title VARCHAR(50) NOT NULL,
+    url VARCHAR(200) NOT NULL);
+
+CREATE TABLE Welcome(
+    title VARCHAR(50) NOT NULL,
+    subtitle VARCHAR(200) NOT NULL,
+    link VARCHAR(200) NOT NULL);
